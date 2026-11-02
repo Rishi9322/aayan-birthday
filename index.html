@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Happy Birthday Aayan 🎂</title>
+  <meta name="description" content="A tiny game-world made just for Aayan's 24th birthday. Tap to enter.">
+  <meta name="theme-color" content="#0b1026">
+  <meta name="color-scheme" content="light">
+  <!-- Replace the domain below with your real site URL after deploying (WhatsApp needs absolute URLs). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Happy Birthday Aayan 🎂">
+  <meta property="og:description" content="A tiny game-world made just for you. Tap to enter.">
+  <meta property="og:image" content="https://aayan-birthday.netlify.app/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="shapes" aria-hidden="true"></div>
+  <header class="top"><button id="mute" class="mute" aria-pressed="false" aria-label="Mute sound"></button></header>
+  <div id="notices" role="region" aria-label="Notifications"></div>
+
+  <main>
+    <section id="intro" class="dark">
+      <canvas id="sky" aria-hidden="true"></canvas>
+      <i class="shoot" style="--t:8%;--d:2s" aria-hidden="true"></i><i class="shoot" style="--t:30%;--d:7s" aria-hidden="true"></i><i class="shoot" style="--t:15%;--d:12s" aria-hidden="true"></i>
+      <div class="intro-inner">
+        <p class="kicker" id="kicker"></p>
+        <button id="begin" class="btn big">Tap to begin ✨</button>
+        <h1 id="title"><span class="l1"></span><span class="l2"></span></h1>
+        <p id="age" class="age" aria-live="polite"></p>
+      </div>
+      <a class="hint" id="scrollHint" href="#cake" hidden>scroll ↓</a>
+    </section>
+
+    <section id="cake" class="s">
+      <header class="s-head"><p class="s-kicker">Level 1</p><h2>Blow out the candles</h2><p class="s-sub">Tap each flame, swipe across them, or blow for real.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="gallery" class="s">
+      <header class="s-head"><p class="s-kicker">Level 2</p><h2>The highlight reel</h2><p class="s-sub">Swipe the top photo away. Tap to open.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="balloons" class="s">
+      <header class="s-head"><p class="s-kicker">Level 3</p><h2>30 seconds. Go!</h2><p class="s-sub">Gold is bonus. Bombs hurt. Chain pops for combos.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="tea" class="s">
+      <header class="s-head"><p class="s-kicker">Level 4</p><h2>Catch the tea</h2><p class="s-sub">Drag the basket. Catch cups, dodge the ice.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="memory" class="s">
+      <header class="s-head"><p class="s-kicker">Level 5</p><h2>Find the pairs</h2><p class="s-sub">Flip two cards. Match all six.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="stack" class="s">
+      <header class="s-head"><p class="s-kicker">Level 6</p><h2>Stack the sandcastle</h2><p class="s-sub">Tap to drop each block. Line it up before the tide comes.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="code" class="s">
+      <header class="s-head"><p class="s-kicker">Level 7</p><h2>Keep the secret</h2><p class="s-sub">Watch the pattern, then repeat it. It gets longer every round.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="quiz" class="s">
+      <header class="s-head"><p class="s-kicker">Level 8</p><h2>How well do we know each other?</h2></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="wishes" class="s dusk dark">
+      <header class="s-head"><p class="s-kicker">Level 9</p><h2>Send a wish to the sky</h2><p class="s-sub">Tap a floating note to read it.</p></header>
+      <div class="mount"></div>
+    </section>
+
+    <section id="finale" class="s finale dark">
+      <div class="mount"></div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-x" id="lbClose" aria-label="Close"></button>
+    <button class="lb-n lb-prev" id="lbPrev" aria-label="Previous"></button>
+    <figure><div id="lbMedia"></div><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-n lb-next" id="lbNext" aria-label="Next"></button>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
